@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group android:checkableBehavior="single">
+
+        <item
+            android:id="@+id/profile"
+            android:icon="@drawable/profile"
+            android:title="Profile" />
+
+        <item
+            android:id="@+id/wishlist"
+            android:icon="@drawable/heart"
+            android:title="Wishlist" />
+
+        <item
+            android:id="@+id/medal"
+            android:icon="@drawable/medal"
+            android:title="Loyalty Points" />
+
+        <item
+            android:id="@+id/payment"
+            android:icon="@drawable/credit_card"
+            android:title="Payment methods" />
+
+    </group>
+
+
+
+</menu>

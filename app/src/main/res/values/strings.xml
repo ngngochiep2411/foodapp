@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">FoodApp</string>
+    <string name="welcome_to_warachow">Welcome to WaraChow</string>
+    <string name="order_the_b">Order the best meals in Lagos and \n have them delivered to your doorstep \n in little or no time. Doesn’t that sound \n delicious???</string>
+    <string name="welcome_to_">Welcome to WaraChow</string>
+
+    <string name="open">Open navigation drawer</string>
+    <string name="close">Close navigation drawer</string>
+    <string name="Our_fried_rice">Our fried rice is made from the finest ingredients and veggies. Every single dish is made with fresh vegetables. Each plate is served with our signature chicken and a free</string>
+</resources>
