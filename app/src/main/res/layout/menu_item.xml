@@ -5,11 +5,11 @@
 
     <data>
 
-        <import type="com.example.foodapp.model.Data" />
+        <import type="com.example.foodapp.model.Menu" />
 
         <variable
             name="dataItem"
-            type="Data" />
+            type="Menu" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout

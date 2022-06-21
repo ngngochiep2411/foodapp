@@ -6,20 +6,27 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.GravityCompat
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
+import androidx.lifecycle.ViewModelProviders
+import com.example.foodapp.ViewModel.SharedViewModel
 import com.example.foodapp.databinding.ActivitySplashScreenBinding
 import com.example.foodapp.fragment.*
-import com.example.foodapp.model.Data
+import com.example.foodapp.model.Menu
 import com.google.android.material.navigation.NavigationView
 import kotlinx.android.synthetic.main.layout_toolbar.view.*
 
 class SplashScreenActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener {
 
     lateinit var binding: ActivitySplashScreenBinding
+    private lateinit var sharedViewModel:SharedViewModel
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = DataBindingUtil.setContentView(this, R.layout.activity_splash_screen)
-
+        sharedViewModel = ViewModelProviders.of(this).get(SharedViewModel::class.java)
+        sharedViewModel.menuItemSelected.observe(this,{
+            binding.barlayout.tvName.text=it.name
+            binding.barlayout.tvTitle.text=it.title
+        })
         replaceFragment(HomeFragment())
 
         binding.navigationView.setNavigationItemSelectedListener {
@@ -69,23 +76,12 @@ class SplashScreenActivity : AppCompatActivity(), NavigationView.OnNavigationIte
     private fun replaceFragment(fragment: Fragment) {
         val manager = supportFragmentManager
         val transaction = manager.beginTransaction()
-        transaction.replace(R.id.content_frame, fragment)
+        transaction.replace(R.id.container, fragment)
         transaction.addToBackStack(null)
         transaction.commit()
     }
 
-    fun gotoDetailMenuFragment(data: Data) {
-        val manager = supportFragmentManager
-        val transaction = manager.beginTransaction()
 
-        val menuDetailFragment = MenuDetailFragment()
-        val bundle = Bundle()
-        bundle.putSerializable("object_data_menu", data)
-        menuDetailFragment.arguments = bundle
-        transaction.replace(R.id.content_frame, menuDetailFragment)
-        transaction.addToBackStack(null)
-        transaction.commit()
-    }
 }
 
 

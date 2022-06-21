@@ -7,4 +7,6 @@
     <string name="open">Open navigation drawer</string>
     <string name="close">Close navigation drawer</string>
     <string name="Our_fried_rice">Our fried rice is made from the finest ingredients and veggies. Every single dish is made with fresh vegetables. Each plate is served with our signature chicken and a free</string>
+    <string name="tvNameHomeFragment">Home</string>
+    <string name="titleHomeFragment">\"Homemade meals prepared with love. Richest ingredients. \"</string>
 </resources>
